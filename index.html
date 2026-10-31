@@ -1,111 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="StudySpace — simple tools and resources to help students study smarter.">
-  <title>StudySpace | Study smarter</title>
-  <style>
-    :root{--blue:#2563eb;--navy:#14284b;--pale:#eff6ff;--ink:#1e293b;--muted:#64748b;--line:#dbeafe;--white:#fff}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f8fbff;color:var(--ink);line-height:1.6}
-    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-    .nav{max-width:1080px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-size:1.35rem;font-weight:800;color:var(--navy);letter-spacing:-.04em}.brand span{color:var(--blue)}
-    nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:#475569;text-decoration:none;font-size:.94rem;font-weight:600}nav a:hover{color:var(--blue)}
-    .wrap{max-width:1080px;margin:auto;padding:28px 22px 64px}
-    .hero{padding:64px 28px;background:linear-gradient(130deg,#eaf3ff,#f7fbff 65%,#dbeafe);border:1px solid var(--line);border-radius:26px;text-align:center}
-    .eyebrow{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:750}
-    h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.08;letter-spacing:-.055em;color:var(--navy);margin:18px 0 12px}
-    .hero p{max-width:590px;margin:0 auto;color:#52647d;font-size:1.08rem}
-    .btn{display:inline-block;border:0;border-radius:12px;background:var(--blue);color:white;padding:12px 18px;font-weight:700;text-decoration:none;cursor:pointer;margin-top:22px}
-    .btn:hover{background:#1d4ed8}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:42px 0 16px}
-    h2{margin:0;color:var(--navy);font-size:1.55rem;letter-spacing:-.03em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.94rem}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .card{background:white;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:0 5px 20px rgba(30,64,175,.045)}
-    .icon{width:42px;height:42px;border-radius:13px;background:var(--pale);display:grid;place-items:center;font-size:1.25rem}
-    h3{margin:12px 0 5px;color:var(--navy);font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.94rem}
-    .tool{margin-top:14px;padding:12px;background:#f8fbff;border:1px solid var(--line);border-radius:12px}
-    .timer{font-size:2rem;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
-    .small-btn{border:1px solid #bfdbfe;background:#fff;color:#1d4ed8;padding:8px 11px;border-radius:9px;font-weight:700;cursor:pointer;margin:5px 5px 0 0}
-    .small-btn:hover{background:#eff6ff}
-    input{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;margin:8px 0}
-    ul{padding-left:20px;margin:8px 0;color:#475569}li{margin:4px 0}
-    .notice{margin-top:24px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:14px 16px;color:#365477;font-size:.9rem}
-    footer{border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center;padding:24px;font-size:.88rem}
-    @media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.nav{align-items:flex-start;flex-direction:column}.hero{padding:48px 18px}}
-    @media(max-width:500px){.grid{grid-template-columns:1fr}nav{gap:12px}}
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudySpace | Your study hub</title>
+<style>
+:root{--blue:#2563eb;--navy:#14213d;--pale:#eff6ff;--ink:#182338;--muted:#64748b;--line:#dbe5f2;--white:#fff;--green:#0f9d70}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7faff;color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(125deg,#10234b,#2563eb);color:white;padding:22px max(5vw,20px) 52px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:1150px;margin:auto}.brand{font-size:1.35rem;font-weight:850;letter-spacing:-.5px}.brand span{color:#bfdbfe}nav a{color:white;text-decoration:none;margin-left:16px;font-weight:650;font-size:.92rem}
+.hero{max-width:1150px;margin:48px auto 0}.hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;max-width:720px;margin:0 0 16px;letter-spacing:-1.5px}.hero p{max-width:650px;color:#dbeafe;font-size:1.12rem}.btn{border:0;border-radius:11px;padding:11px 16px;background:var(--blue);color:white;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}.btn.light{background:white;color:#1745a5}.btn.secondary{background:#e8f0ff;color:#1745a5}.btn:focus,input:focus,select:focus,textarea:focus{outline:3px solid #93c5fd;outline-offset:2px}
+main{max-width:1150px;margin:-24px auto 60px;padding:0 20px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat,.panel,.feature{background:white;border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 8px 25px #173b6b0a}.stat strong{display:block;font-size:1.65rem;color:#1d4ed8}.stat span,.muted{color:var(--muted);font-size:.92rem}
+section{margin-top:30px;scroll-margin-top:20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px}.section-head h2{margin:0;font-size:1.55rem;letter-spacing:-.4px}.section-head p{margin:3px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature h3{margin:8px 0 5px}.feature p{color:var(--muted);margin:0 0 14px}.emoji{font-size:1.7rem}.panel h3{margin-top:0}.two{display:grid;grid-template-columns:1.1fr .9fr;gap:15px}.controls{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}input,select,textarea{font:inherit;border:1px solid #cbd5e1;border-radius:9px;padding:10px;background:white;color:var(--ink);max-width:100%}input[type=text],input[type=date],textarea{width:100%}label{display:block;font-weight:650;margin:9px 0 5px}.task{display:flex;align-items:center;gap:9px;border-bottom:1px solid #edf1f7;padding:9px 0}.task span{flex:1}.task.done span{text-decoration:line-through;color:#94a3b8}.timer{font-size:3rem;font-weight:850;letter-spacing:2px;text-align:center;color:#1d4ed8;margin:12px 0}.progress{height:10px;background:#e5edf8;border-radius:20px;overflow:hidden}.progress div{height:100%;background:#2563eb;width:0%;transition:width .2s}.question{font-weight:750;font-size:1.05rem}.choice{display:block;width:100%;text-align:left;background:#f4f7fc;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:11px;margin:8px 0;cursor:pointer}.choice:hover{border-color:#60a5fa}.feedback{font-weight:700;margin-top:10px;min-height:24px}.flashcard{background:var(--pale);border:1px solid #bfdbfe;border-radius:14px;padding:25px;text-align:center;min-height:125px;display:grid;place-items:center;font-size:1.15rem;font-weight:700;cursor:pointer}.pill{display:inline-block;border-radius:99px;background:#eaf2ff;color:#1d4ed8;padding:4px 9px;font-size:.8rem;font-weight:750}.resource-list a{display:block;padding:9px 0;border-bottom:1px solid #edf1f7;color:#1d4ed8;text-decoration:none}.shop-item{border:1px dashed #a9bdd8;background:#f8fbff;border-radius:12px;padding:14px}.ad-slot{border:1px dashed #c4cedd;border-radius:12px;text-align:center;padding:16px;color:#7b8798;background:#fbfdff;font-size:.9rem}
+footer{background:#10234b;color:#dbeafe;padding:30px 20px;text-align:center}footer a{color:white}small{color:var(--muted)}.hidden{display:none!important}
+@media(max-width:800px){nav{align-items:flex-start;flex-direction:column}nav a{margin:0 12px 0 0}.stats,.grid,.two{grid-template-columns:1fr}.hero{margin-top:32px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
 </head>
 <body>
 <header>
-  <div class="nav">
-    <div class="brand">Study<span>Space</span></div>
-    <nav aria-label="Main navigation">
-      <a href="#tools">Study tools</a><a href="#quizzes">Quizzes</a><a href="#resources">Resources</a><a href="#shop">Shop</a>
-    </nav>
-  </div>
+<nav><div class="brand">Study<span>Space</span> ✦</div><div><a href="#tools">Tools</a><a href="#quiz">Quizzes</a><a href="#flashcards">Flashcards</a><a href="#resources">Resources</a><a href="#shop">Study shop</a></div></nav>
+<div class="hero"><span class="pill">YOUR STUDY HUB</span><h1>Make study time work for you.</h1><p>Plan your week, focus with a timer, practise what you know and keep track of your progress — all in one place.</p><a class="btn light" href="#tools">Explore your study tools ↓</a></div>
 </header>
-<main class="wrap">
-  <section class="hero">
-    <span class="eyebrow">A calmer way to study</span>
-    <h1>Study smarter.<br>Feel more organised.</h1>
-    <p>Simple study tools, quick quizzes and helpful resources — all in one space.</p>
-    <a class="btn" href="#tools">Explore study tools</a>
-  </section>
+<main>
+<div class="stats">
+ <div class="stat"><strong id="taskCount">0</strong><span>Tasks completed</span></div>
+ <div class="stat"><strong id="quizCount">0</strong><span>Quiz questions answered correctly</span></div>
+ <div class="stat"><strong id="studyMinutes">0</strong><span>Focus minutes completed</span></div>
+</div>
 
-  <div class="section-head" id="tools"><div><h2>Study tools</h2><p>Small tools to help you get started.</p></div></div>
-  <section class="grid">
-    <article class="card">
-      <div class="icon">⏱️</div><h3>Focus timer</h3><p>Try a 25-minute focus session, then take a short break.</p>
-      <div class="tool"><div class="timer" id="timer">25:00</div><button class="small-btn" id="start">Start</button><button class="small-btn" id="reset">Reset</button><p id="timer-status" aria-live="polite">Ready when you are.</p></div>
-    </article>
-    <article class="card">
-      <div class="icon">✓</div><h3>Task planner</h3><p>Add a few tasks and tick them off as you finish.</p>
-      <div class="tool"><input id="task-input" type="text" placeholder="e.g. Revise science notes" aria-label="New study task"><button class="small-btn" id="add-task">Add task</button><ul id="task-list"></ul></div>
-    </article>
-    <article class="card">
-      <div class="icon">🗓️</div><h3>Study routine</h3><p>A simple routine to make study sessions feel manageable.</p>
-      <ul><li>Choose one clear goal</li><li>Focus for 25 minutes</li><li>Take a 5-minute break</li><li>Review what you learned</li></ul>
-    </article>
-  </section>
+<section id="tools"><div class="section-head"><div><h2>Study tools</h2><p>Small steps make studying easier.</p></div></div>
+<div class="grid">
+ <div class="feature"><div class="emoji">⏱️</div><h3>Focus timer</h3><p>Work in focused sessions, then take a break.</p><a class="btn secondary" href="#timer">Open timer</a></div>
+ <div class="feature"><div class="emoji">📝</div><h3>Task planner</h3><p>Add homework and revision tasks and tick them off.</p><a class="btn secondary" href="#planner">Plan tasks</a></div>
+ <div class="feature"><div class="emoji">📅</div><h3>Weekly routine</h3><p>Set a simple study goal for each day.</p><a class="btn secondary" href="#routine">Build routine</a></div>
+ <div class="feature"><div class="emoji">🧠</div><h3>Practice quizzes</h3><p>Test your understanding across school subjects.</p><a class="btn secondary" href="#quiz">Try a quiz</a></div>
+ <div class="feature"><div class="emoji">🗂️</div><h3>Flashcards</h3><p>Review key terms using active recall.</p><a class="btn secondary" href="#flashcards">Review cards</a></div>
+ <div class="feature"><div class="emoji">📈</div><h3>Progress tracker</h3><p>See your completed tasks and quiz practice.</p><a class="btn secondary" href="#progress">View progress</a></div>
+</div></section>
 
-  <div class="section-head" id="quizzes"><div><h2>Quick quizzes</h2><p>Test what you know in a few clicks.</p></div></div>
-  <section class="grid">
-    <article class="card"><div class="icon">🧠</div><h3>General knowledge</h3><p>Coming soon: short quizzes to warm up your brain.</p></article>
-    <article class="card"><div class="icon">➗</div><h3>Maths practice</h3><p>Coming soon: friendly practice questions with explanations.</p></article>
-    <article class="card"><div class="icon">🔬</div><h3>Science revision</h3><p>Coming soon: revise key ideas and check your understanding.</p></article>
-  </section>
+<section class="two">
+ <div class="panel" id="timer"><h2>⏱️ Focus timer</h2><p class="muted">Choose a session length. Keep the page open while the timer runs.</p>
+ <div class="controls"><select id="duration"><option value="15">15 minutes</option><option value="25" selected>25 minutes</option><option value="30">30 minutes</option><option value="45">45 minutes</option></select><button class="btn" id="startTimer">Start</button><button class="btn secondary" id="pauseTimer">Pause</button><button class="btn secondary" id="resetTimer">Reset</button></div>
+ <div class="timer" id="clock">25:00</div><div class="progress"><div id="timerBar"></div></div><p class="muted" id="timerMessage" aria-live="polite">Ready when you are.</p></div>
+ <div class="panel" id="planner"><h2>📝 Task planner</h2><label for="taskInput">What do you need to do?</label><input id="taskInput" type="text" placeholder="e.g. Revise algebra factorisation"><div class="controls"><input id="taskDate" type="date" aria-label="Due date"><button class="btn" id="addTask">Add task</button></div><div id="taskList"></div><p class="muted">Your tasks are saved on this device in this browser.</p></div>
+</section>
 
-  <div class="section-head" id="resources"><div><h2>Study resources</h2><p>Useful guides and revision material.</p></div></div>
-  <section class="grid">
-    <article class="card"><div class="icon">📝</div><h3>Revision guides</h3><p>Clear summaries and study tips will live here.</p></article>
-    <article class="card"><div class="icon">📖</div><h3>How to study</h3><p>Practical ways to plan, practise and remember information.</p></article>
-    <article class="card"><div class="icon">🎯</div><h3>Goal setting</h3><p>Break a big assignment into smaller steps.</p></article>
-  </section>
+<section class="two">
+ <div class="panel" id="routine"><h2>📅 Weekly study routine</h2><p class="muted">Add one realistic goal for each day.</p><div id="routineList"></div><button class="btn secondary" id="saveRoutine">Save routine</button><p class="muted" id="routineMsg" aria-live="polite"></p></div>
+ <div class="panel" id="progress"><h2>📈 Your progress</h2><p>Tasks completed</p><div class="progress"><div id="taskBar"></div></div><p>Correct quiz answers</p><div class="progress"><div id="quizBar"></div></div><p class="muted">Progress is stored locally in this browser. It is not shared with anyone.</p><button class="btn secondary" id="resetProgress">Reset my saved progress</button></div>
+</section>
 
-  <div class="section-head" id="shop"><div><h2>Digital study shop</h2><p>Downloadable resources — planned for a later stage.</p></div></div>
-  <section class="card"><h3>Coming soon</h3><p>Study planners, printable checklists and revision templates. No purchases are enabled on this starter version.</p></section>
+<section id="quiz"><div class="section-head"><div><h2>🧠 Quick practice quiz</h2><p>Choose a subject and test your knowledge.</p></div></div>
+<div class="panel"><label for="subject">Subject</label><select id="subject"><option value="math">Mathematics</option><option value="science">Science</option><option value="english">English</option><option value="digital">Digital Technologies</option></select><div id="quizArea" style="margin-top:16px"><div class="question" id="questionText"></div><div id="answers"></div><div class="feedback" id="quizFeedback" aria-live="polite"></div><button class="btn" id="nextQuestion">Next question</button></div></div>
+</section>
 
-  <div class="notice"><strong>Welcome to the first version of StudySpace.</strong> This is a starter site. Before publishing, add original content, check all links and ask a parent or guardian to help with any accounts, payments or advertising.</div>
+<section id="flashcards"><div class="section-head"><div><h2>🗂️ Flashcards</h2><p>Try to remember the answer before revealing it.</p></div></div>
+<div class="panel"><div class="controls"><select id="cardSubject"><option value="science">Science</option><option value="math">Mathematics</option><option value="english">English</option><option value="digital">Digital Technologies</option></select><span class="muted" id="cardNumber"></span></div><div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Click to reveal flashcard answer">Click to reveal</div><div class="controls"><button class="btn secondary" id="prevCard">Previous</button><button class="btn" id="flipCard">Reveal answer</button><button class="btn secondary" id="nextCard">Next</button></div></div></section>
+
+<section id="resources"><div class="section-head"><div><h2>📚 Study resources</h2><p>Helpful places to continue learning.</p></div></div>
+<div class="panel resource-list">
+<a href="https://www.khanacademy.org/" target="_blank" rel="noopener">Khan Academy — free lessons and practice</a>
+<a href="https://www.bbc.co.uk/bitesize" target="_blank" rel="noopener">BBC Bitesize — subject explanations and revision</a>
+<a href="https://www.nsw.gov.au/education-and-training" target="_blank" rel="noopener">NSW education resources — learning support</a>
+<a href="https://www.nma.gov.au/learn" target="_blank" rel="noopener">National Museum of Australia — learning resources</a>
+</div></section>
+
+<section id="shop"><div class="section-head"><div><h2>🛍️ StudySpace downloads</h2><p>Original printable resources are planned for this section.</p></div></div>
+<div class="grid">
+ <div class="shop-item"><span class="pill">COMING SOON</span><h3>Weekly study planner</h3><p class="muted">A printable page to organise schoolwork and revision.</p></div>
+ <div class="shop-item"><span class="pill">COMING SOON</span><h3>Revision checklist</h3><p class="muted">Break a topic into small, manageable study steps.</p></div>
+ <div class="shop-item"><span class="pill">COMING SOON</span><h3>Flashcard templates</h3><p class="muted">Printable cards for key terms and definitions.</p></div>
+</div><p class="muted">No products are for sale and no payments are collected on this website.</p></section>
+
+<section><div class="ad-slot">Advertisement space — ads are not active. Advertising can only be added after the site meets a provider's requirements and an adult helps manage the account.</div></section>
 </main>
-<footer>© 2026 StudySpace · Made to help students study smarter.</footer>
+<footer><strong>StudySpace ✦</strong><p>Learn a little. Practise a little. Make progress.</p><small>StudySpace is an independent student project. External resources belong to their respective owners. Your planner and progress stay in this browser.</small></footer>
+
 <script>
-  let seconds=25*60, interval=null;
-  const timer=document.getElementById('timer'), status=document.getElementById('timer-status');
-  function showTime(){timer.textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0')}
-  document.getElementById('start').addEventListener('click',()=>{
-    if(interval){clearInterval(interval);interval=null;document.getElementById('start').textContent='Resume';status.textContent='Paused.';return}
-    document.getElementById('start').textContent='Pause';status.textContent='Focus time!';
-    interval=setInterval(()=>{seconds--;showTime();if(seconds<=0){clearInterval(interval);interval=null;status.textContent='Session complete — take a short break!';document.getElementById('start').textContent='Start'}},1000)
-  });
-  document.getElementById('reset').addEventListener('click',()=>{clearInterval(interval);interval=null;seconds=25*60;showTime();status.textContent='Ready when you are.';document.getElementById('start').textContent='Start'});
-  document.getElementById('add-task').addEventListener('click',()=>{
-    const input=document.getElementById('task-input'), value=input.value.trim();if(!value)return;
-    const li=document.createElement('li'), label=document.createElement('label'), checkbox=document.createElement('input');
-    checkbox.type='checkbox';checkbox.style.width='auto';checkbox.style.marginRight='8px';
-    label.append(checkbox,document.createTextNode(value));li.append(label);document.getElementById('task-list').append(li);input.value='';
-  });
-  document.getElementById('task-input').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('add-task').click()});
+const $=id=>document.getElementById(id);
+const get=(k,d)=>{try{return JSON.parse(localStorage.getItem('ss_'+k))??d}catch{return d}};
+const put=(k,v)=>localStorage.setItem('ss_'+k,JSON.stringify(v));
+let tasks=get('tasks',[]), correct=get('correct',0), answered=get('answered',0), minutes=get('minutes',0);
+function stats(){ $('taskCount').textContent=tasks.filter(t=>t.done).length;$('quizCount').textContent=correct;$('studyMinutes').textContent=minutes;$('taskBar').style.width=(tasks.length?tasks.filter(t=>t.done).length/tasks.length*100:0)+'%';$('quizBar').style.width=(answered?correct/answered*100:0)+'%';}
+function renderTasks(){ $('taskList').innerHTML='';tasks.forEach((t,i)=>{let row=document.createElement('div');row.className='task'+(t.done?' done':'');let cb=document.createElement('input');cb.type='checkbox';cb.checked=t.done;cb.onchange=()=>{tasks[i].done=cb.checked;put('tasks',tasks);renderTasks()};let span=document.createElement('span');span.textContent=t.name+(t.date?' · '+t.date:'');let del=document.createElement('button');del.className='btn secondary';del.textContent='Delete';del.onclick=()=>{tasks.splice(i,1);put('tasks',tasks);renderTasks()};row.append(cb,span,del);$('taskList').append(row)});stats()}
+$('addTask').onclick=()=>{let name=$('taskInput').value.trim();if(!name)return;tasks.push({name,date:$('taskDate').value,done:false});put('tasks',tasks);$('taskInput').value='';renderTasks()};
+$('taskInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('addTask').click()});renderTasks();
+
+const days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];let routine=get('routine',{});$('routineList').innerHTML=days.map(d=>`<label>${d}</label><input type="text" data-day="${d}" placeholder="e.g. 20 minutes of science" value="${(routine[d]||'').replaceAll('"','&quot;')}">`).join('');
+$('saveRoutine').onclick=()=>{document.querySelectorAll('[data-day]').forEach(x=>routine[x.dataset.day]=x.value);put('routine',routine);$('routineMsg').textContent='Routine saved on this device.'};
+
+let remaining=1500,total=1500,tick=null;
+function showTimer(){$('clock').textContent=String(Math.floor(remaining/60)).padStart(2,'0')+':'+String(remaining%60).padStart(2,'0');$('timerBar').style.width=((total-remaining)/total*100)+'%'}
+$('duration').onchange=()=>{clearInterval(tick);remaining=total=Number($('duration').value)*60;showTimer();$('timerMessage').textContent='Ready when you are.'};
+$('startTimer').onclick=()=>{if(tick)return;$('timerMessage').textContent='Focus session in progress.';tick=setInterval(()=>{remaining--;showTimer();if(remaining<=0){clearInterval(tick);tick=null;minutes+=Math.round(total/60);put('minutes',minutes);stats();$('timerMessage').textContent='Session complete — great work! Take a short break.'}},1000)};
+$('pauseTimer').onclick=()=>{clearInterval(tick);tick=null;$('timerMessage').textContent='Timer paused.'};
+$('resetTimer').onclick=()=>{clearInterval(tick);tick=null;remaining=total=Number($('duration').value)*60;showTimer();$('timerMessage').textContent='Timer reset.'};showTimer();
+
+const quizzes={
+ math:[['What is 3x + 2x?',['5x','5x²','6x'],'5x','Like terms add their coefficients: 3 + 2 = 5.'],['Factorise x² − 9.',['(x − 3)(x + 3)','(x − 9)(x + 1)','(x − 3)²'],'(x − 3)(x + 3)','This is a difference of two squares: a² − b² = (a − b)(a + b).'],['Solve 2x = 14.',['x = 12','x = 7','x = 28'],'x = 7','Divide both sides by 2.']],
+ science:[['Which cell can engulf pathogens?',['Red blood cell','Phagocyte','Platelet'],'Phagocyte','Phagocytes engulf and digest pathogens.'],['What do antibodies bind to?',['Specific antigens','All cells','Oxygen'],'Specific antigens','Antibodies bind to matching antigens.'],['Which is a first-line defence?',['Skin','Memory B cells','Inflammation'],'Skin','Skin forms a physical barrier that helps stop pathogens entering.']],
+ english:[['Which technique compares two unlike things using “like” or “as”?',['Metaphor','Simile','Personification'],'Simile','A simile makes a comparison using “like” or “as”.'],['What is the main purpose of a topic sentence?',['Introduce the paragraph’s main idea','List every source','End the essay'],'Introduce the paragraph’s main idea','It tells the reader what the paragraph will focus on.'],['What does “contrast” mean in analysis?',['Showing similarities','Showing differences','Repeating a phrase'],'Showing differences','Contrast highlights differences between ideas or images.']],
+ digital:[['What does a variable do in a program?',['Stores a value','Deletes the program','Connects to Wi-Fi'],'Stores a value','A variable stores data that a program can use or change.'],['What is a loop used for?',['Repeating instructions','Changing the monitor','Saving a password'],'Repeating instructions','A loop repeats a block of code.'],['What does debugging mean?',['Finding and fixing errors','Designing a logo','Turning off a computer'],'Finding and fixing errors','Debugging is the process of locating and correcting bugs.']]
+};
+let qi=0;
+function loadQ(){let arr=quizzes[$('subject').value];qi%=arr.length;let q=arr[qi];$('questionText').textContent=(qi+1)+'. '+q[0];$('answers').innerHTML='';q[1].forEach(a=>{let b=document.createElement('button');b.className='choice';b.textContent=a;b.onclick=()=>{if($('quizFeedback').dataset.done==='1')return;let ok=a===q[2];answered++;if(ok)correct++;put('correct',correct);put('answered',answered);$('quizFeedback').dataset.done='1';$('quizFeedback').textContent=ok?'Correct! '+q[3]:'Not quite. Correct answer: '+q[2]+'. '+q[3];stats();[...$('answers').children].forEach(x=>x.disabled=true)};$('answers').append(b)});$('quizFeedback').textContent='';$('quizFeedback').dataset.done='0'}
+$('subject').onchange=()=>{qi=0;loadQ()};$('nextQuestion').onclick=()=>{qi++;loadQ()};loadQ();
+
+const cards={
+ science:[['What is an antigen?','A molecule or feature recognised by the immune system.'],['What is a phagocyte?','A white blood cell that engulfs and digests pathogens.'],['What is immunity?','The body’s ability to resist or protect against disease.']],
+ math:[['What is a coefficient?','The number multiplying a variable, such as 4 in 4x.'],['What is a quadratic?','An expression or relation with highest power 2.'],['What is a factor?','A value or expression that divides another exactly.']],
+ english:[['What is a metaphor?','A direct comparison that says one thing is another.'],['What is imagery?','Descriptive language that creates a sensory picture.'],['What is a thesis?','The central argument or main position of an essay.']],
+ digital:[['What is an algorithm?','A clear sequence of steps used to solve a problem.'],['What is iteration?','Repeating a set of instructions, often using a loop.'],['What is a bug?','An error or flaw in a program.']]
+};
+let ci=0,flipped=false;
+function showCard(){let a=cards[$('cardSubject').value];ci=(ci+a.length)%a.length;$('cardNumber').textContent=`Card ${ci+1} of ${a.length}`;$('flashcard').textContent=flipped?a[ci][1]:a[ci][0]}
+function flip(){flipped=!flipped;showCard()}$('flipCard').onclick=flip;$('flashcard').onclick=flip;$('flashcard').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}};$('cardSubject').onchange=()=>{ci=0;flipped=false;showCard()};$('prevCard').onclick=()=>{ci--;flipped=false;showCard()};$('nextCard').onclick=()=>{ci++;flipped=false;showCard()};showCard();
+$('resetProgress').onclick=()=>{if(confirm('Reset tasks, quiz scores, focus minutes and routine saved in this browser?')){['tasks','correct','answered','minutes','routine'].forEach(k=>localStorage.removeItem('ss_'+k));tasks=[];correct=answered=minutes=0;routine={};renderTasks();stats();$('routineList').querySelectorAll('input').forEach(x=>x.value='')}};
 </script>
-</body>
-</html>
+</body></html>
