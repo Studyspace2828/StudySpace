@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudySpace — simple tools and resources to help students study smarter.">
+  <title>StudySpace | Study smarter</title>
+  <style>
+    :root{--blue:#2563eb;--navy:#14284b;--pale:#eff6ff;--ink:#1e293b;--muted:#64748b;--line:#dbeafe;--white:#fff}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f8fbff;color:var(--ink);line-height:1.6}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+    .nav{max-width:1080px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-size:1.35rem;font-weight:800;color:var(--navy);letter-spacing:-.04em}.brand span{color:var(--blue)}
+    nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:#475569;text-decoration:none;font-size:.94rem;font-weight:600}nav a:hover{color:var(--blue)}
+    .wrap{max-width:1080px;margin:auto;padding:28px 22px 64px}
+    .hero{padding:64px 28px;background:linear-gradient(130deg,#eaf3ff,#f7fbff 65%,#dbeafe);border:1px solid var(--line);border-radius:26px;text-align:center}
+    .eyebrow{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:750}
+    h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.08;letter-spacing:-.055em;color:var(--navy);margin:18px 0 12px}
+    .hero p{max-width:590px;margin:0 auto;color:#52647d;font-size:1.08rem}
+    .btn{display:inline-block;border:0;border-radius:12px;background:var(--blue);color:white;padding:12px 18px;font-weight:700;text-decoration:none;cursor:pointer;margin-top:22px}
+    .btn:hover{background:#1d4ed8}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:42px 0 16px}
+    h2{margin:0;color:var(--navy);font-size:1.55rem;letter-spacing:-.03em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.94rem}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{background:white;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:0 5px 20px rgba(30,64,175,.045)}
+    .icon{width:42px;height:42px;border-radius:13px;background:var(--pale);display:grid;place-items:center;font-size:1.25rem}
+    h3{margin:12px 0 5px;color:var(--navy);font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.94rem}
+    .tool{margin-top:14px;padding:12px;background:#f8fbff;border:1px solid var(--line);border-radius:12px}
+    .timer{font-size:2rem;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
+    .small-btn{border:1px solid #bfdbfe;background:#fff;color:#1d4ed8;padding:8px 11px;border-radius:9px;font-weight:700;cursor:pointer;margin:5px 5px 0 0}
+    .small-btn:hover{background:#eff6ff}
+    input{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;margin:8px 0}
+    ul{padding-left:20px;margin:8px 0;color:#475569}li{margin:4px 0}
+    .notice{margin-top:24px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:14px 16px;color:#365477;font-size:.9rem}
+    footer{border-top:1px solid var(--line);background:#fff;color:var(--muted);text-align:center;padding:24px;font-size:.88rem}
+    @media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.nav{align-items:flex-start;flex-direction:column}.hero{padding:48px 18px}}
+    @media(max-width:500px){.grid{grid-template-columns:1fr}nav{gap:12px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">Study<span>Space</span></div>
+    <nav aria-label="Main navigation">
+      <a href="#tools">Study tools</a><a href="#quizzes">Quizzes</a><a href="#resources">Resources</a><a href="#shop">Shop</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow">A calmer way to study</span>
+    <h1>Study smarter.<br>Feel more organised.</h1>
+    <p>Simple study tools, quick quizzes and helpful resources — all in one space.</p>
+    <a class="btn" href="#tools">Explore study tools</a>
+  </section>
+
+  <div class="section-head" id="tools"><div><h2>Study tools</h2><p>Small tools to help you get started.</p></div></div>
+  <section class="grid">
+    <article class="card">
+      <div class="icon">⏱️</div><h3>Focus timer</h3><p>Try a 25-minute focus session, then take a short break.</p>
+      <div class="tool"><div class="timer" id="timer">25:00</div><button class="small-btn" id="start">Start</button><button class="small-btn" id="reset">Reset</button><p id="timer-status" aria-live="polite">Ready when you are.</p></div>
+    </article>
+    <article class="card">
+      <div class="icon">✓</div><h3>Task planner</h3><p>Add a few tasks and tick them off as you finish.</p>
+      <div class="tool"><input id="task-input" type="text" placeholder="e.g. Revise science notes" aria-label="New study task"><button class="small-btn" id="add-task">Add task</button><ul id="task-list"></ul></div>
+    </article>
+    <article class="card">
+      <div class="icon">🗓️</div><h3>Study routine</h3><p>A simple routine to make study sessions feel manageable.</p>
+      <ul><li>Choose one clear goal</li><li>Focus for 25 minutes</li><li>Take a 5-minute break</li><li>Review what you learned</li></ul>
+    </article>
+  </section>
+
+  <div class="section-head" id="quizzes"><div><h2>Quick quizzes</h2><p>Test what you know in a few clicks.</p></div></div>
+  <section class="grid">
+    <article class="card"><div class="icon">🧠</div><h3>General knowledge</h3><p>Coming soon: short quizzes to warm up your brain.</p></article>
+    <article class="card"><div class="icon">➗</div><h3>Maths practice</h3><p>Coming soon: friendly practice questions with explanations.</p></article>
+    <article class="card"><div class="icon">🔬</div><h3>Science revision</h3><p>Coming soon: revise key ideas and check your understanding.</p></article>
+  </section>
+
+  <div class="section-head" id="resources"><div><h2>Study resources</h2><p>Useful guides and revision material.</p></div></div>
+  <section class="grid">
+    <article class="card"><div class="icon">📝</div><h3>Revision guides</h3><p>Clear summaries and study tips will live here.</p></article>
+    <article class="card"><div class="icon">📖</div><h3>How to study</h3><p>Practical ways to plan, practise and remember information.</p></article>
+    <article class="card"><div class="icon">🎯</div><h3>Goal setting</h3><p>Break a big assignment into smaller steps.</p></article>
+  </section>
+
+  <div class="section-head" id="shop"><div><h2>Digital study shop</h2><p>Downloadable resources — planned for a later stage.</p></div></div>
+  <section class="card"><h3>Coming soon</h3><p>Study planners, printable checklists and revision templates. No purchases are enabled on this starter version.</p></section>
+
+  <div class="notice"><strong>Welcome to the first version of StudySpace.</strong> This is a starter site. Before publishing, add original content, check all links and ask a parent or guardian to help with any accounts, payments or advertising.</div>
+</main>
+<footer>© 2026 StudySpace · Made to help students study smarter.</footer>
+<script>
+  let seconds=25*60, interval=null;
+  const timer=document.getElementById('timer'), status=document.getElementById('timer-status');
+  function showTime(){timer.textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0')}
+  document.getElementById('start').addEventListener('click',()=>{
+    if(interval){clearInterval(interval);interval=null;document.getElementById('start').textContent='Resume';status.textContent='Paused.';return}
+    document.getElementById('start').textContent='Pause';status.textContent='Focus time!';
+    interval=setInterval(()=>{seconds--;showTime();if(seconds<=0){clearInterval(interval);interval=null;status.textContent='Session complete — take a short break!';document.getElementById('start').textContent='Start'}},1000)
+  });
+  document.getElementById('reset').addEventListener('click',()=>{clearInterval(interval);interval=null;seconds=25*60;showTime();status.textContent='Ready when you are.';document.getElementById('start').textContent='Start'});
+  document.getElementById('add-task').addEventListener('click',()=>{
+    const input=document.getElementById('task-input'), value=input.value.trim();if(!value)return;
+    const li=document.createElement('li'), label=document.createElement('label'), checkbox=document.createElement('input');
+    checkbox.type='checkbox';checkbox.style.width='auto';checkbox.style.marginRight='8px';
+    label.append(checkbox,document.createTextNode(value));li.append(label);document.getElementById('task-list').append(li);input.value='';
+  });
+  document.getElementById('task-input').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('add-task').click()});
+</script>
+</body>
+</html>
